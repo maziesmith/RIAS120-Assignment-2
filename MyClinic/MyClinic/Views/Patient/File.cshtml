@@ -1,0 +1,56 @@
+﻿@model MyClinic.ViewModels.PatientFileVeiwModel
+
+@{
+    ViewBag.Title = "File";
+}
+
+<h2>@Model.Patient.FullName File</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal"></dl>
+</div>
+<div>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
+
+<div>
+    <p>Date of birth: @Model.Patient.Dob</p>
+    <p>Gender: @Model.Patient.Gender</p>
+    <p>Final diagnosis: @Model.Patient.Diagnosis.Name (@Model.Patient.Diagnosis.Code)</p>
+    <p>&nbsp;</p>
+</div>
+
+<div>
+    <h4>Prescriptions for @Model.Patient.FullName</h4>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Prescription</th>
+            <th></th>
+        </tr>
+
+        @foreach (var prescription in Model.Patient.Prescriptions)
+        {
+            <tr>
+                <td>
+                    @prescription.ID
+                </td>
+                <td>
+                    @prescription.Note
+                </td>
+                <td>
+                    @if (User.IsInRole("physician"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = @prescription.ID })
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

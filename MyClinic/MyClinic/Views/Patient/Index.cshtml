@@ -1,0 +1,38 @@
+﻿@model MyClinic.ViewModels.PatientListViewModel
+
+@{
+    ViewBag.Title = "My Patients";
+}
+
+<h2>My Patients</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Date of birth</th>
+        <th>Diagnosis</th>
+    </tr>
+
+    @foreach (var patient in Model.Patients)
+    {
+        <tr>
+            <td>
+                @patient.ID
+            </td>
+            <td>
+                @Html.ActionLink(string.Format("{0} ({1})", patient.FullName, patient.Gender.ToString()), "file", new { id = patient.ID })
+            </td>
+            <td>
+                @patient.Dob.ToShortDateString()
+            </td>
+            <td>
+                @(patient.Diagnosis == null ? "" : string.Format("{0} ({1})", patient.Diagnosis.Name, patient.Diagnosis.Code))
+            </td>
+        </tr>
+    }
+
+</table>

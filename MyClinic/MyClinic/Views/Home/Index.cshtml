@@ -1,0 +1,45 @@
+﻿@model MyClinic.ViewModels.HomeViewModel
+@{
+    ViewBag.Title = "Home";
+}
+
+<div class="jumbotron">
+    <h1>My Secure Clinic Web Application</h1>
+    <p class="lead">RIAS-120: Securing Applications, Web Services, and Software-As-A-Service (SAAS), Summer 2016<br />Assignment 2.</p>
+    @*<p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Physicians</h2>
+
+        @foreach (var physician in Model.Physicians)
+        {
+            <p>
+                @Html.ActionLink(physician.FullName, "Physician", new { id = physician.ID }, new { @class = "btn btn-default" })
+            </p>
+        }
+    </div>
+    <div class="col-md-4" style="text-align:center">
+        <h2>Number of our patients</h2>
+        <h1>@Model.NumberOfPatients</h1>
+    </div>
+    <div class="col-md-4">
+        <h2>Login to see more options</h2>
+        @if (Request.IsAuthenticated)
+        {
+            if (User.IsInRole("physician"))
+            {
+                <p>
+                    @Html.ActionLink("My Patients", "patient", null, new { @class = "btn btn-default" })
+                </p>
+            }
+            if (User.IsInRole("patient"))
+            {
+                <p>
+                    @Html.ActionLink("My profile", "me", "patient", null, new { @class = "btn btn-default" })
+                </p>
+            }
+        }
+    </div>
+</div>
