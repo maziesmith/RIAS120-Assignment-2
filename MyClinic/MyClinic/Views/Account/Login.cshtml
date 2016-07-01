@@ -3,7 +3,7 @@
     ViewBag.Title = "Log in";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
 <div class="row">
     <div class="col-md-8">
         <section id="loginForm">
@@ -11,6 +11,7 @@
             {
                 @Html.AntiForgeryToken()
                 <h4>Use a predefined account to log in.</h4>
+                <code>Credentials have been defined in the Web.config in this sample project.</code>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
@@ -41,8 +42,9 @@
                     </div>
                 </div>
                 <p>
-                    @Html.ActionLink("Register as a new user", "Register")
-                </p>
+                    @*@Html.ActionLink("Register as a new user", "Register")*@
+                    <code>User registration is not implemented in this sample project.</code>
+</p>
                 @* Enable this once you have account confirmation enabled for password reset functionality
                     <p>
                         @Html.ActionLink("Forgot your password?", "ForgotPassword")
@@ -56,7 +58,3 @@
         </section>
     </div>
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

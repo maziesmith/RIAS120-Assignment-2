@@ -1,0 +1,15 @@
+﻿<ul class="nav navbar-nav">
+    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+    <li>@Html.ActionLink("About This Application", "About", "Home")</li>
+
+    @if (User.IsInRole("physician"))
+    {
+        <li>@Html.ActionLink("My Patients", "Index", "Patient")</li>
+    }
+
+    @if (User.IsInRole("patient"))
+    {
+        <li>@Html.ActionLink("My Medical Profile", "Me", "Patient")</li>
+    }
+</ul>
+

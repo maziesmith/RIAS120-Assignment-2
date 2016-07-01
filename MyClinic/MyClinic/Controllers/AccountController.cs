@@ -70,9 +70,9 @@ namespace MyClinic.Controllers
         public ActionResult LogOff()
         {
             System.Web.Security.FormsAuthentication.SignOut();
+            Session.Abandon();
             return RedirectToAction("Index", "Home");
         }
-
 
         private ActionResult RedirectToLocal(string returnUrl)
         {

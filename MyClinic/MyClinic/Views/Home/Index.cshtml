@@ -25,9 +25,9 @@
         <h1>@Model.NumberOfPatients</h1>
     </div>
     <div class="col-md-4">
-        <h2>Login to see more options</h2>
         @if (Request.IsAuthenticated)
         {
+            <h2>You have access to:</h2>
             if (User.IsInRole("physician"))
             {
                 <p>
@@ -43,6 +43,7 @@
         }
         else
         {
+            <h2>Login to see more options</h2>
             <p>
                 @Html.ActionLink("Login", "Login", "Account", null, new { @class = "btn btn-default" })
             </p>
