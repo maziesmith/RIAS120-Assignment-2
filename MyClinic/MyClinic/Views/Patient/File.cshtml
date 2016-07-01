@@ -13,7 +13,10 @@
 </div>
 <div>
     <p>
-        @Html.ActionLink("Back to List", "Index")
+        @if (User.IsInRole("physician"))
+        {
+            @Html.ActionLink("Back to List", "Index")
+        }
     </p>
 </div>
 
