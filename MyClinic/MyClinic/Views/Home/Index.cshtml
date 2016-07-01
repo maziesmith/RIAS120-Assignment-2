@@ -31,7 +31,7 @@
             if (User.IsInRole("physician"))
             {
                 <p>
-                    @Html.ActionLink("My Patients", "patient", null, new { @class = "btn btn-default" })
+                    @Html.ActionLink("My Patients", "index", "patient", null, new { @class = "btn btn-default" })
                 </p>
             }
             if (User.IsInRole("patient"))
@@ -40,6 +40,12 @@
                     @Html.ActionLink("My profile", "me", "patient", null, new { @class = "btn btn-default" })
                 </p>
             }
+        }
+        else
+        {
+            <p>
+                @Html.ActionLink("Login", "Login", "Account", null, new { @class = "btn btn-default" })
+            </p>
         }
     </div>
 </div>
