@@ -1,0 +1,33 @@
+﻿@model MyClinic.Model.Physician
+
+@{
+    ViewBag.Title = "Physician";
+}
+
+<h2>@Html.DisplayFor(model => model.FullName) Profile</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dob)
+        </dt>
+        <dd>
+            @Model.Dob.ToShortDateString()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Speciality)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Speciality)
+        </dd>
+    </dl>
+</div>
+

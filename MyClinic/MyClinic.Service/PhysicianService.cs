@@ -17,5 +17,10 @@ namespace MyClinic.Service
             return FakeRepository.Physicians
                 .FirstOrDefault(p => string.Equals(p.UserName, physicianUserName, StringComparison.OrdinalIgnoreCase));
         }
+
+        public Physician GetPhysician(int id)
+        {
+            return FakeRepository.Physicians.FirstOrDefault(p => p.ID == id);
+        }
     }
 }

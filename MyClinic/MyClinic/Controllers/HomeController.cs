@@ -40,5 +40,11 @@ namespace MyClinic.Controllers
 
             return View();
         }
+
+        public ActionResult Physician(int id)
+        {
+            var physician = physicianSvc.GetPhysician(id);
+            return View(physician);
+        }
     }
 }

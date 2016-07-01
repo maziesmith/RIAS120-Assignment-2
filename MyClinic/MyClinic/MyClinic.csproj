@@ -131,6 +131,7 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\PatientListViewModel.cs" />
     <Compile Include="ViewModels\PatientProfileVeiwModel.cs" />
+    <Compile Include="ViewModels\PhysicianProfileViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -171,6 +172,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Patient\File.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Physician.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
