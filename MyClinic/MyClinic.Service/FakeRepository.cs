@@ -56,8 +56,8 @@ namespace MyClinic.Service
             var prescription5 = new Prescription { ID = 10005, Note = "Tab Metformin 500 mg  #50" };
             var prescription6 = new Prescription { ID = 10006, Note = "Tab Metformin 500 mg  #60" };
             var prescription7a = new Prescription { ID = 10007, Note = "Tab Metformin 500 mg  #70" };
-            var prescription7b = new Prescription { ID = 10007, Note = "Amp. insulin X  #90" };
-            var prescription8 = new Prescription { ID = 10003, Note = "Tab Methimazole 5 mg  #80" };
+            var prescription7b = new Prescription { ID = 10009, Note = "Amp. insulin X  #90" };
+            var prescription8 = new Prescription { ID = 10008, Note = "Tab Methimazole 5 mg  #80" };
 
             #endregion
 

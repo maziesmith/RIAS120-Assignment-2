@@ -20,12 +20,14 @@ namespace MyClinic.Controllers
             physicianSvc = new PhysicianService();
         }
 
+        [RequireHttps]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
+        [RequireHttps]
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
